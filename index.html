@@ -34,15 +34,15 @@
         padding: 5px 0 30px;
       }
       ul a {
-        background-size: cover;
+        background-size: contain;
         display: block;
         padding: 0;
-        height: 320px;
-        width: 320px;
+        height: 300px;
+        width: 400px;
       }
       ul h3,
       ul p {
-        max-width: 320px;
+        max-width: 400px;
       }
     </style>
   </head>
@@ -51,9 +51,16 @@
 
     <ul>
       <li>
-        <a href="examples/basic/" style="background-image: url(https://cloud.githubusercontent.com/assets/674727/24217331/ba3d5b86-0efc-11e7-8a7c-ac74b3f35a65.png)"></a>
+        <a href="examples/basic/" style="background-image: url(./img/city.png)"></a>
         <h3>Basic</h3>
-        <p>This is a basic example.</p>
+        <p>
+          This is a basic example:
+          <br>
+          an embedded scene with a background video, a main camera (active) and one camera for a series of points of view (top, front, back etc...).
+          <br>
+          <br>
+          Every point of view is shown in a canvas under the scene.
+        </p>        
       </li>
     </ul>
 

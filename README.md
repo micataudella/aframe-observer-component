@@ -27,9 +27,34 @@ Install and use by directly including the [browser files](dist):
 </head>
 
 <body>
-  <a-scene>
-    <a-entity observer="foo: bar"></a-entity>
+  <a-scene embedded>
+    <a-sky color="#ECECEC"></a-sky>
+    <a-box 
+      position="-1 0.5 1" 
+      rotation="0 45 0" 
+      width="1" height="1" depth="1"  
+      color="#4CC3D9"></a-box>
+    <a-plane 
+      rotation="-90 0 0" 
+      width="4" height="4" 
+      color="#7BC8A4"></a-plane>
+
+    <a-entity
+      id="mainCamera"
+      position="0 0 3.8"
+      camera
+      active
+      look-controls></a-entity>
+
+    <a-entity
+      id="observerCamera"
+      position="2 1.8 4.8"
+      rotation="-20 45 0"
+      camera
+      observer="canvas: #cameraObserver;"
+      active="false"></a-entity>
   </a-scene>
+  <div id="cameraObserver"></div>
 </body>
 ```
 

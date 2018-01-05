@@ -1,7 +1,7 @@
 {
   "name": "aframe-observer-component",
   "version": "1.0.0",
-  "description": "An Observer component for a camera in an A-frame scene",
+  "description": "An Observer component for a camera in an A-frame scene - Render to a canvas from A-frame camera",
   "main": "index.js",
   "unpkg": "dist/aframe-observer-component.min.js",
   "scripts": {

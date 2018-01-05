@@ -54,7 +54,18 @@
 	 * Observer component for A-Frame.
 	 */
 	AFRAME.registerComponent('observer', {
-	  schema: {},
+	  schema: {
+	    // selector of the canvas element where the camera view is going to be drawed
+	    canvas: {
+	      type: 'string',
+	      default: ''
+	    },
+	    // desired FPS of observer display
+	    fps: {
+	      type: 'number',
+	      default: '30.0'
+	    }
+	  },
 
 	  /**
 	   * Set if component needs multiple instancing.
@@ -64,7 +75,15 @@
 	  /**
 	   * Called once when component is attached. Generally for initial setup.
 	   */
-	  init: function () { },
+	  init: function () {
+	    var targetEl = document.querySelector(this.data.canvas);
+	    this.counter = 0;
+	    this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+	    this.renderer.setPixelRatio( window.devicePixelRatio );
+	    this.renderer.setSize( targetEl.offsetWidth, targetEl.offsetHeight );
+	    // creates canvas
+	    targetEl.appendChild(this.renderer.domElement)
+	  },
 
 	  /**
 	   * Called when component is attached and when component data changes.
@@ -81,7 +100,19 @@
 	  /**
 	   * Called on each scene tick.
 	   */
-	  // tick: function (t) { },
+	  tick: function (t, delta) {
+	    var loopFPS = 1000.0 / delta;
+	    var hmdIsXFasterThanDesiredFPS = loopFPS / this.data.fps;
+	    var renderEveryNthFrame = Math.round(hmdIsXFasterThanDesiredFPS);
+	    if (this.counter % renderEveryNthFrame === 0) {
+	      this.render(delta);
+	    }
+	    this.counter += 1;
+	  },
+
+	  render: function() {
+	    this.renderer.render( this.el.sceneEl.object3D , this.el.object3DMap.camera );
+	  },
 
 	  /**
 	   * Called when entity pauses.
