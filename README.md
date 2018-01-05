@@ -4,7 +4,9 @@
 [![License](http://img.shields.io/npm/l/aframe-observer-component.svg?style=flat-square)](https://npmjs.org/package/aframe-observer-component)
 
 An Observer component for a camera in an A-frame scene.
+
 Attach a view from a camera to a canvas external of the A-frame scene.
+
 Loosely based on [this](https://gist.github.com/derickson/334a48eb1f53f6891c59a2c137c180fa) example.
 
 For [A-Frame](https://aframe.io).
