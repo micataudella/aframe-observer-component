@@ -9,7 +9,7 @@ if (typeof AFRAME === 'undefined') {
  */
 AFRAME.registerComponent('observer', {
   schema: {
-    // selector of the canvas element where the camera view is going to be drawed
+    // selector of the HTML element where the canvas with the camera view is going to be attached
     canvas: {
       type: 'string',
       default: ''

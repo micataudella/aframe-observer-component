@@ -3,15 +3,20 @@
 [![Version](http://img.shields.io/npm/v/aframe-observer-component.svg?style=flat-square)](https://npmjs.org/package/aframe-observer-component)
 [![License](http://img.shields.io/npm/l/aframe-observer-component.svg?style=flat-square)](https://npmjs.org/package/aframe-observer-component)
 
-An Observer component for a camera in an A-frame scene
+An Observer component for a camera in an A-frame scene.
+Attach a view from a camera to a canvas external of the A-frame scene.
+Loosely based on [this](https://gist.github.com/derickson/334a48eb1f53f6891c59a2c137c180fa) example.
 
 For [A-Frame](https://aframe.io).
+
+![observer example](https://raw.githubusercontent.com/micataudella/aframe-observer-component/master/img/screenshot.png)
 
 ### API
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
-|          |             |               |
+| canvas   | selector of the HTML element where the canvas with the camera view is going to be attached | '' |
+| fps      | desired FPS of observer display | 30.0 |
 
 ### Installation
 
