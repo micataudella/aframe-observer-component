@@ -55,7 +55,7 @@
 	 */
 	AFRAME.registerComponent('observer', {
 	  schema: {
-	    // selector of the HTML element where the canvas with the camera view is going to be attached
+	    // selector of the canvas element where the camera view is going to be drawed
 	    canvas: {
 	      type: 'string',
 	      default: ''
